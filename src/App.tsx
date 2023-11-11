@@ -1,35 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import RotatingText from "./components/rotating-text";
+import { Button } from "@chakra-ui/react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section className="relative overflow-hidden bg-[radial-gradient(39.13%_66.21%_at_69.97%_53.55%,_#444DD4_0%,_#333AA0_100%)]">
+        <div>
+          <span>
+            <img
+              decoding="async"
+              src="/images/landing/corner-1.svg"
+              alt="Transpact"
+              className="absolute left-0 top-0 block"
+            />
+          </span>
+          <span>
+            <img
+              decoding="async"
+              src="/images/landing/corner-2.svg"
+              alt="Transpact"
+              className="absolute bottom-0 left-[228px] block"
+            />
+          </span>
+          <span>
+            <img
+              decoding="async"
+              src="/images/landing/corner-3.svg"
+              alt="Transpact"
+              className="absolute left-[44%] top-0 block"
+            />
+          </span>
+          <span>
+            <img
+              decoding="async"
+              src="/images/landing/corner-4.svg"
+              alt="Transpact"
+              className="absolute bottom-0 left-[calc(100%_-_170px)] block"
+            />
+          </span>
+        </div>
+
+        <div className="relative mx-auto flex max-w-screen-xl flex-row pt-[10%]">
+          <div className="container flex flex-col items-start gap-4 text-center">
+            <a
+              href={"/"}
+              className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+              target="_blank"
+            >
+              View this on GitHub
+            </a>
+
+            <h1 className="item-start font-heading text-3xl text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              <RotatingText
+                texts={[
+                  "One Life",
+                  "One Passport",
+                  "Zero Hassel",
+                  "Full Transparency",
+                ]}
+                period={1000}
+              />
+            </h1>
+
+            <p className="max-w-[42rem] leading-normal text-white sm:text-xl sm:leading-8">
+              A Decentralised App based on React and Arweave Network. <br />
+              Transparent and trustless travel history.
+            </p>
+            <div className="space-x-4">
+              <Button onClick={() => {}} size="lg" variant="default">
+                For Individuals
+              </Button>
+
+              <Button variant="outline" size="lg">
+                For Countries/Consulates
+              </Button>
+            </div>
+          </div>
+
+          <div className="max-w-lg rounded-full bg-[linear-gradient(180deg,_#5A63E9_0%,_#3B42A8_100%)] px-8 pt-8">
+            <img
+              decoding="async"
+              src="/images/landing/hero-img.png"
+              alt="Hero"
+              className="z-5 -mt-8 w-full"
+            />
+          </div>
+        </div>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
