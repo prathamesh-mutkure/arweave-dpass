@@ -1,5 +1,5 @@
 import RotatingText from "./components/rotating-text";
-import { Button } from "@chakra-ui/react";
+import { Button, Heading, Text } from "@chakra-ui/react";
 
 function App() {
   return (
@@ -44,13 +44,13 @@ function App() {
           <div className="container flex flex-col items-start gap-4 text-center">
             <a
               href={"/"}
-              className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+              className="rounded-2xl bg-white px-4 py-1.5 text-sm font-medium"
               target="_blank"
             >
-              View this on GitHub
+              <Text>View this on GitHub</Text>
             </a>
 
-            <h1 className="item-start font-heading text-3xl text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <Heading className="item-start font-heading text-3xl text-white sm:text-5xl md:text-6xl lg:text-7xl">
               <RotatingText
                 texts={[
                   "One Life",
@@ -60,20 +60,17 @@ function App() {
                 ]}
                 period={1000}
               />
-            </h1>
+            </Heading>
 
-            <p className="max-w-[42rem] leading-normal text-white sm:text-xl sm:leading-8">
+            <Text className="max-w-[42rem] leading-normal text-white sm:text-xl sm:leading-8 text-left">
               A Decentralised App based on React and Arweave Network. <br />
               Transparent and trustless travel history.
-            </p>
-            <div className="space-x-4">
-              <Button onClick={() => {}} size="lg" variant="default">
-                For Individuals
-              </Button>
+            </Text>
 
-              <Button variant="outline" size="lg">
-                For Countries/Consulates
-              </Button>
+            <div className="space-x-4">
+              <Button>For Individuals</Button>
+
+              <Button>For Countries/Consulates</Button>
             </div>
           </div>
 
