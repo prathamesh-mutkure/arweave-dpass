@@ -1,6 +1,23 @@
 import MainLayout from "./components/layouts/main-layout";
 import RotatingText from "./components/rotating-text";
 import { Button } from "./components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import { Separator } from "./components/ui/separator";
+
+const features = [
+  {
+    title: "Single Passport Solution",
+    desc: "Users can manage their entire travel history in one secure digital passport, reducing the risk of losing physical documents",
+  },
+  {
+    title: "Efficient Visa Processing",
+    desc: "Embassies and consulates can use dPass for faster, more efficient visa processing, enhancing the overall application experience",
+  },
+  {
+    title: "Blockchain Security",
+    desc: "Utilizing the blockchain ensures that travel history is immutable, transparent, and resistant to tampering",
+  },
+];
 
 function App() {
   return (
@@ -51,7 +68,7 @@ function App() {
               View this on GitHub
             </a>
 
-            <h1 className="item-start font-heading text-3xl text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="item-start font-heading text-3xl text-white sm:text-5xl md:text-6xl lg:text-7xl font-bold">
               <RotatingText
                 texts={[
                   "One Life",
@@ -90,7 +107,49 @@ function App() {
         </div>
       </section>
 
-      <section></section>
+      <section id="about" className="py-28 container">
+        <h1 className="font-heading font-extrabold text-7xl text-center">
+          Decentralised Travel Pass
+        </h1>
+
+        <Separator className="my-12" />
+
+        <p className="text-muted-foreground text-center text-2xl font-light">
+          Unlock the future of hassle-free travel with{" "}
+          <strong>PermaPassport</strong> - the world's first blockchain-powered
+          digital passport solution.
+          {/* <br /> */} Say goodbye to lost passports, cumbersome visa
+          applications, and security concerns.
+          {/* <br /> */} Seamlessly manage your travel history, apply for visas,
+          and experience a new era of borderless convenience.
+          <br />
+          <br />
+          <strong>
+            Secure. Streamlined. Simple. Welcome to the passport revolution.
+          </strong>
+        </p>
+      </section>
+
+      <section id="solution" className="py-28 bg-black">
+        <div className="container">
+          <h1 className="font-heading font-extrabold text-7xl text-white text-center">
+            Why PermaPass?
+          </h1>
+
+          <div className="flex flex-row gap-x-4 gap-y-8 justify-evenly flex-wrap my-20">
+            {features.map((feature) => (
+              <Card className="bg-transparent w-[350px]">
+                <CardHeader>
+                  <CardTitle className="text-white">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{feature.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
     </MainLayout>
   );
 }
