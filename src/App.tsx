@@ -1,8 +1,10 @@
+import { Icons } from "./components/icons";
 import MainLayout from "./components/layouts/main-layout";
 import RotatingText from "./components/rotating-text";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { Separator } from "./components/ui/separator";
+import { siteConfig } from "./config/site";
 
 const features = [
   {
@@ -11,11 +13,29 @@ const features = [
   },
   {
     title: "Efficient Visa Processing",
-    desc: "Embassies and consulates can use dPass for faster, more efficient visa processing, enhancing the overall application experience",
+    desc: "Embassies and consulates can use PermaPass for faster, more efficient visa processing, enhancing the overall application experience",
   },
   {
     title: "Blockchain Security",
     desc: "Utilizing the blockchain ensures that travel history is immutable, transparent, and resistant to tampering",
+  },
+];
+
+const problems = [
+  {
+    title: "Passport Hassles",
+    desc: "Users often face challenges with maintaining physical passports, risking loss, damage, or theft",
+    sol: "PermaPass eliminates the need for physical passports by securely storing travel history on a public blockchain",
+  },
+  {
+    title: "Visa Application Complexity",
+    desc: "Traditional visa applications involve extensive paperwork and manual processes",
+    sol: "Embassies and consulates can streamline visa applications on PermaPass, simplifying the process for both applicants and authorities",
+  },
+  {
+    title: "Data Security Concerns",
+    desc: "Users worry about the security of their sensitive travel data",
+    sol: "PermaPass uses blockchain technology to ensure tamper-proof and transparent storage of travel history, enhancing data security",
   },
 ];
 
@@ -28,7 +48,7 @@ function App() {
             <img
               decoding="async"
               src="/images/landing/corner-1.svg"
-              alt="Transpact"
+              alt="Img"
               className="absolute left-0 top-0 block"
             />
           </span>
@@ -36,7 +56,7 @@ function App() {
             <img
               decoding="async"
               src="/images/landing/corner-2.svg"
-              alt="Transpact"
+              alt="Img"
               className="absolute bottom-0 left-[228px] block"
             />
           </span>
@@ -44,7 +64,7 @@ function App() {
             <img
               decoding="async"
               src="/images/landing/corner-3.svg"
-              alt="Transpact"
+              alt="Img"
               className="absolute left-[44%] top-0 block"
             />
           </span>
@@ -52,7 +72,7 @@ function App() {
             <img
               decoding="async"
               src="/images/landing/corner-4.svg"
-              alt="Transpact"
+              alt="Img"
               className="absolute bottom-0 left-[calc(100%_-_170px)] block"
             />
           </span>
@@ -61,7 +81,7 @@ function App() {
         <div className="relative mx-auto flex max-w-screen-xl flex-row pt-[10%]">
           <div className="container flex flex-col items-start gap-4 text-center">
             <a
-              href={"/"}
+              href={siteConfig.links.github}
               className="rounded-2xl bg-white px-4 py-1.5 text-sm font-medium"
               target="_blank"
             >
@@ -144,6 +164,41 @@ function App() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{feature.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" className="py-28">
+        <div className="container">
+          <h1 className="font-heading font-extrabold text-7xl text-center">
+            Say No To
+          </h1>
+
+          <div className="flex flex-row gap-x-4 gap-y-8 justify-evenly flex-wrap my-20">
+            {problems.map((p) => (
+              <Card className="w-[380px]">
+                <CardHeader>
+                  <CardTitle className="text-center">{p.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-row gap-x-4 min-h-[72px]">
+                    <div className="self-center">
+                      <Icons.xCircle size={18} />
+                    </div>
+                    <p className="text-muted-foreground">{p.desc}</p>
+                  </div>
+
+                  <Separator className="my-4" />
+
+                  <div className="flex flex-row gap-x-4">
+                    <div className="self-center">
+                      <Icons.checkCircle size={18} />
+                    </div>
+                    <p className="text-muted-foreground">{p.sol}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}

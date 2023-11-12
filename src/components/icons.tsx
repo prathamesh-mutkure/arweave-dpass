@@ -39,10 +39,13 @@ import {
   FileTextIcon,
   FileImage,
   ArrowLeft,
+  XCircle,
+  CheckCircle,
+  CheckCircle2,
   type XIcon as LucideIcon,
-} from "lucide-react"
+} from "lucide-react";
 
-export type Icon = typeof LucideIcon
+export type Icon = typeof LucideIcon;
 
 export const Icons = {
   logo: Command,
@@ -99,4 +102,7 @@ export const Icons = {
   twitter: Twitter,
   check: Check,
   users: Users,
-}
+  xCircle: XCircle,
+  checkCircle: CheckCircle,
+  checkCircle2: CheckCircle2,
+};
