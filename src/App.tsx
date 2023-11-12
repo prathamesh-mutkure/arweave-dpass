@@ -65,7 +65,7 @@ function App() {
 
             <p className="max-w-[42rem] leading-normal text-white sm:text-xl sm:leading-8 text-left">
               A Decentralised App based on React and Arweave Network. <br />
-              Transparent and trustless travel history.
+              Transparent and trustless travel history and visa services.
             </p>
 
             <div className="space-x-4">
@@ -74,7 +74,7 @@ function App() {
               </Button>
 
               <Button variant="outline" size="lg">
-                For Countries/Consulates
+                For Governments
               </Button>
             </div>
           </div>
@@ -89,6 +89,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section></section>
     </MainLayout>
   );
 }

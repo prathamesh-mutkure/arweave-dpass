@@ -25,7 +25,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-scree flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <header
         style={color ? { backgroundColor: "rgba(0,0,0,0.4)" } : {}}
         className="fixed left-0 top-0 z-10 w-full backdrop-blur duration-300  ease-in"
