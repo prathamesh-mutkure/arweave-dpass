@@ -1,9 +1,10 @@
+import MainLayout from "./components/layouts/main-layout";
 import RotatingText from "./components/rotating-text";
 import { Button } from "./components/ui/button";
 
 function App() {
   return (
-    <>
+    <MainLayout>
       <section className="relative overflow-hidden bg-[radial-gradient(39.13%_66.21%_at_69.97%_53.55%,_#444DD4_0%,_#333AA0_100%)]">
         <div>
           <span>
@@ -88,7 +89,7 @@ function App() {
           </div>
         </div>
       </section>
-    </>
+    </MainLayout>
   );
 }
 
